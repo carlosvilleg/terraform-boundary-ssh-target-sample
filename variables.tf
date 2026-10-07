@@ -29,6 +29,7 @@ variable "credential_store_id" {
 
 variable "vault_engine_path" {
 	type = string
+	description = "Mount path for the ssh engine in Vault"
 	
 }
 
@@ -54,6 +55,6 @@ variable "ssh_targets" {
 
 variable "host_source_id" {
 	type = string
+	description = "Id for the Host Catalog that will source the hosts for these targets"
 }
-
 
