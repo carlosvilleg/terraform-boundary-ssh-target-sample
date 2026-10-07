@@ -1,6 +1,6 @@
 
 locals {
-	ssh_hosts = {for v in var.ssh_targets: "${v.application}-${v.tier}-${v.environment}" => merge(v, {filter=templatefile("./filter.tftpl", v)})}
+	ssh_hosts = {for v in var.ssh_targets: "${v.application}-${v.tier}-${v.environment}" => merge(v, {filter=templatefile("${path.module}/filter.tftpl", v)})}
 }
 
 resource "boundary_host_set_plugin" "ssh" {
