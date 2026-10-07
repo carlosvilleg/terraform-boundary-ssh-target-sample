@@ -10,6 +10,8 @@ locals {
 		host_source_id = boundary_host_set_plugin.ssh["${p[1].application}-${p[1].tier}-${p[1].environment}"].id
 		cloud = p[1].cloud,
 		group_id = p[0].idp_group_id
+		target_name = p[1].name
+		role_name = p[0].name
 		region = p[1].region,
 		}}
 }
