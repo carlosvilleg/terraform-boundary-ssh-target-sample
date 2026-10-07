@@ -1,0 +1,3 @@
+%{ if "${cloud}" == "aws" }["tag:env=${environment}", "tag:app=${application}", "tag:tier=${tier}"]%{ endif ~}
+%{ if "${cloud}" == "gcp" }["labels.env:${environment}", "labels.app:${application}", "label.tier:${tier}"]%{ endif ~}
+%{ if "${cloud}" == "azure" }"(tagName eq 'env' and tagValue eq '${environment}') and (tagName eq 'app' and tagValue eq '${application}') and (tagName eq 'tier' and tagValue eq '${tier}')"%{ endif ~}

@@ -46,6 +46,9 @@ variable "ssh_targets" {
 		name=string,
 		cloud = string,
 		region = string,
+		application = string,
+		environment = string,
+		tier = string,
 	}))
 }
 
